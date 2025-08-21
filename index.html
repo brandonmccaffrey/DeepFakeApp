@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Verifia — Deepfake or Real?</title>
   <style>
-    :root{--bg:#0b1220;--card:#0f172a;--text:#e5e7eb;--ring:rgba(34,211,238,.25);--c1:#22d3ee;--c2:#8b5cf6;--ok:rgba(34,197,94,.15);--bad:rgba(239,68,68,.12)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}.wrap{max-width:1100px;margin:0 auto;padding:24px}.row{display:grid;grid-template-columns:2fr 1fr;gap:24px}@media (max-width:900px){.row{grid-template-columns:1fr}}.card{background:var(--card);border:1px solid var(--ring);border-radius:24px;padding:24px;position:relative}.glow{position:fixed;inset:0;pointer-events:none}.glow::before,.glow::after{content:"";position:absolute;border-radius:999px;filter:blur(40px);opacity:.4}.glow::before{width:280px;height:280px;left:-80px;top:-80px;background:radial-gradient(closest-side,var(--c1),transparent)}.glow::after{width:280px;height:280px;right:-80px;bottom:-80px;background:radial-gradient(closest-side,var(--c2),transparent)}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.brand{display:flex;gap:12px;align-items:center}.vmark{width:36px;height:36px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--ring);box-shadow:0 0 0 6px var(--ring)}.pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);font-size:12px;margin-left:8px}.btn{border:1px solid var(--ring);background:rgba(255,255,255,.06);color:var(--text);padding:10px 14px;border-radius:14px;font-weight:600;cursor:pointer}.btn:hover{opacity:.9}.btn[disabled]{opacity:.5;cursor:not-allowed}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.choice{position:relative;overflow:hidden;border-radius:16px;padding:0;border:none;cursor:pointer}.choice .fill{position:absolute;inset:0;opacity:.7;filter:blur(10px)}.choice .label{position:relative;display:block;padding:18px 24px;text-align:center;font-size:20px;color:white}.gradient1{background:linear-gradient(135deg,var(--c1),var(--c2))}.gradient2{background:linear-gradient(135deg,var(--c2),var(--c1))}.feedback{margin-top:16px;border:1px solid var(--ring);border-radius:16px;padding:16px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 12px;font-size:14px}tbody tr{border-top:1px solid rgba(255,255,255,.1)}.tag{padding:2px 8px;border-radius:999px;font-size:12px;display:inline-block}.tag.real{background:rgba(16,185,129,.18);color:#a7f3d0}.tag.fake{background:rgba(244,63,94,.18);color:#fecaca}kbd{background:#0006;border-radius:6px;padding:2px 6px;font-size:12px}footer{opacity:.6;text-align:center;margin:24px 0}.tests{margin-top:12px}.tests li{margin:4px 0;padding:6px 8px;border-radius:8px}
+    :root{--bg:#0b1220;--card:#0f172a;--text:#e5e7eb;--ring:rgba(34,211,238,.25);--c1:#22d3ee;--c2:#8b5cf6;--ok:rgba(34,197,94,.15);--bad:rgba(239,68,68,.12)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}.wrap{max-width:900px;margin:0 auto;padding:24px}.card{background:var(--card);border:1px solid var(--ring);border-radius:24px;padding:24px;position:relative}.glow{position:fixed;inset:0;pointer-events:none}.glow::before,.glow::after{content:"";position:absolute;border-radius:999px;filter:blur(40px);opacity:.4}.glow::before{width:280px;height:280px;left:-80px;top:-80px;background:radial-gradient(closest-side,var(--c1),transparent)}.glow::after{width:280px;height:280px;right:-80px;bottom:-80px;background:radial-gradient(closest-side,var(--c2),transparent)}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.brand{display:flex;gap:12px;align-items:center}.vmark{width:36px;height:36px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--ring);box-shadow:0 0 0 6px var(--ring)}.pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);font-size:12px;margin-left:8px}.btn{border:1px solid var(--ring);background:rgba(255,255,255,.06);color:var(--text);padding:10px 14px;border-radius:14px;font-weight:600;cursor:pointer}.btn:hover{opacity:.9}.btn[disabled]{opacity:.5;cursor:not-allowed}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.choice{position:relative;overflow:hidden;border-radius:16px;padding:0;border:none;cursor:pointer}.choice .fill{position:absolute;inset:0;opacity:.7;filter:blur(10px)}.choice .label{position:relative;display:block;padding:18px 24px;text-align:center;font-size:20px;color:white}.gradient1{background:linear-gradient(135deg,var(--c1),var(--c2))}.gradient2{background:linear-gradient(135deg,var(--c2),var(--c1))}.feedback{margin-top:16px;border:1px solid var(--ring);border-radius:16px;padding:16px}kbd{background:#0006;border-radius:6px;padding:2px 6px;font-size:12px}footer{opacity:.6;text-align:center;margin:24px 0}
   </style>
 </head>
 <body>
@@ -17,31 +17,22 @@
       <div><button class="btn" id="resetBtn" title="Reset score & accuracy">Reset Score</button></div>
     </header>
 
-    <div class="row">
-      <section class="card">
-        <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0;font-size:24px">Deepfake or Real?</h2><div><span class="pill">Score: <b id="score">0</b></span><span class="pill">Rounds: <b id="rounds">0</b></span><span class="pill">Accuracy: <b id="acc">0%</b></span></div></div>
-        <div class="card" style="margin-top:16px;background:rgba(255,255,255,.03)"><div style="text-align:center"><div id="clipName" style="opacity:.8;font-size:14px;min-height:20px"></div><audio id="player" controls style="width:100%;max-width:700px;margin:8px auto 0;display:block"></audio><div style="font-size:12px;opacity:.7;margin-top:6px">Tip: <kbd>R</kbd> Real, <kbd>D</kbd> Deepfake, <kbd>Space</kbd> Play/Pause</div></div></div>
-        <div class="choices"><button class="choice" id="realBtn"><span class="fill gradient1"></span><span class="label">Real</span></button><button class="choice" id="fakeBtn"><span class="fill gradient2"></span><span class="label">Deepfake</span></button></div>
-        <div id="broken" class="feedback" style="display:none"></div>
-        <div id="feedback" class="feedback" style="display:none"></div>
-        <div style="text-align:right;margin-top:8px"><button class="btn" id="nextBtn">Next Round ↻</button></div>
-      </section>
-      <aside class="card">
-        <h3 style="margin-top:0">Samples</h3>
-        <p style="opacity:.8;font-size:14px;margin-top:-6px">Edit the list inside this file to add/remove items.</p>
-        <div style="max-height:360px;overflow:auto;border:1px solid var(--ring);border-radius:12px"><table id="table"><thead><tr><th>Name</th><th>Label</th></tr></thead><tbody></tbody></table></div>
-        <div class="card tests"><h4 style="margin:0 0 6px 0">Tests</h4><div id="testsSummary" style="font-size:14px"></div><ul id="testsList" style="list-style:none;padding-left:0"></ul></div>
-      </aside>
-    </div>
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0;font-size:24px">Deepfake or Real?</h2><div><span class="pill">Score: <b id="score">0</b></span><span class="pill">Rounds: <b id="rounds">0</b></span><span class="pill">Accuracy: <b id="acc">0%</b></span></div></div>
+      <div class="card" style="margin-top:16px;background:rgba(255,255,255,.03)"><div style="text-align:center"><div id="clipName" style="opacity:.8;font-size:14px;min-height:20px"></div><audio id="player" controls style="width:100%;max-width:700px;margin:8px auto 0;display:block"></audio><div style="font-size:12px;opacity:.7;margin-top:6px">Tip: <kbd>R</kbd> Real, <kbd>D</kbd> Deepfake, <kbd>Space</kbd> Play/Pause</div></div></div>
+      <div class="choices"><button class="choice" id="realBtn"><span class="fill gradient1"></span><span class="label">Real</span></button><button class="choice" id="fakeBtn"><span class="fill gradient2"></span><span class="label">Deepfake</span></button></div>
+      <div id="broken" class="feedback" style="display:none"></div>
+      <div id="feedback" class="feedback" style="display:none"></div>
+      <div style="text-align:right;margin-top:8px"><button class="btn" id="nextBtn">Next Round ↻</button></div>
+    </section>
+
     <footer>Built for demos & training. Keep audio respectful and owned/licensed. © <span id="year"></span> Verifia.</footer>
   </div>
 
   <script>
     const RAW_DATASET=[
-      {name:"CEO Town Hall — authentic",url:"ElevenLabs_2025-08-21T02_19_26_Brittney_pvc_sp102_s50_sb75_se44_b_m2.mp3",label:"real"},
-      {name:"CEO Town Hall — cloned voice",url:"audio/ceo-townhall-fake.mp3",label:"deepfake"},
-      {name:"Support Call — agent A",url:"audio/support-real.ogg",label:"real"},
-      {name:"Support Call — cloned",url:"audio/support-fake.ogg",label:"deepfake"}
+      {name:"CEO Password Reset",url:"ElevenLabs_2025-08-21T02_19_26_Brittney_pvc_sp102_s50_sb75_se44_b_m2.mp3",label:"real"},
+      {name:"CEO Town Hall — cloned voice",url:"/audio/ceo-townhall-fake.mp3",label:"deepfake"}
     ];
     function s(v){return v==null?"":String(v)}
     function escapeHtml(str){return s(str).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
@@ -53,9 +44,6 @@
     const player=$("player"), clipName=$("clipName"), feedback=$("feedback"), broken=$("broken"), nextBtn=$("nextBtn")
     const scoreEl=$("score"), roundsEl=$("rounds"), accEl=$("acc")
     const realBtn=$("realBtn"), fakeBtn=$("fakeBtn"), resetBtn=$("resetBtn")
-    const tbody=document.querySelector("#table tbody")
-
-    function renderTable(){ if(!tbody) return; tbody.innerHTML=DATASET.map(i=>`<tr><td>${escapeHtml(i.name)}</td><td>${i.label==="real"?'<span class="tag real">real</span>':'<span class="tag fake">deepfake</span>'}</td></tr>`).join("") }
 
     let stats=loadStats()
     function loadStats(){try{const v=JSON.parse(localStorage.getItem(LS_KEY))||{};return{score:Number(v.score)||0,rounds:Number(v.rounds)||0,correct:Number(v.correct)||0}}catch{return{score:0,rounds:0,correct:0}}}
@@ -98,18 +86,7 @@
     resetBtn.addEventListener("click",()=>{stats={score:0,rounds:0,correct:0};saveStats();updateHUD()})
     document.addEventListener("keydown",(e)=>{const k=e.key.toLowerCase();if(k==="r")handleGuess("real");if(k==="d")handleGuess("deepfake");if(e.code==="Space"){e.preventDefault();if(player.paused)player.play();else player.pause()}if(e.key==="Enter")pickNext()})
 
-    function runTests(){
-      const out=[];const t=(n,f)=>{let p=false,d="";try{p=!!f()}catch(e){d=String(e)}out.push({n:n,p:p,d:d})}
-      const d1=sanitize([{name:"x",url:"/a.mp3",label:"real"},{name:"y",url:"/b.mp3",label:"deepfake"},{name:1,url:"",label:"x"}]);t("dataset_filters_invalid",()=>d1.length===2&&d1[0].label==="real"&&d1[1].label==="deepfake")
-      const ids=[0,1,2,3,4,5,6,7,8,9];const pick=(recent)=>{const pool=ids.filter(i=>!recent.includes(i));const list=pool.length?pool:ids;return list[Math.floor(Math.random()*list.length)]};const a=pick([0,1,2,3,4]);t("pick_avoids_recent",()=>a>=0&&a<=9&&![0,1,2,3,4].includes(a))
-      const e1=escapeHtml('<>&"\'');t("escape_html",()=>e1==='&lt;&gt;&amp;&quot;&#39;')
-      const s0={score:0,rounds:0,correct:0};const s1={score:s0.score+1,rounds:s0.rounds+1,correct:s0.correct+1};t("score_math",()=>s1.score===1&&s1.rounds===1&&s1.correct===1)
-      const acc=(c,r)=>r?Math.round((c/r)*100):0;t("accuracy_math",()=>acc(7,10)===70&&acc(0,0)===0)
-      t("broken_message_map",()=>brokenMessageFor(4)==="unsupported"&&brokenMessageFor(2)==="network"&&brokenMessageFor(null)==="unknown")
-      const testsList=$("testsList"), testsSummary=$("testsSummary");const pass=out.filter(x=>x.p).length;testsSummary.textContent=`Passed ${pass}/${out.length}`;testsList.innerHTML=out.map(x=>`<li style="background:${x.p?'rgba(16,185,129,.12)':'rgba(244,63,94,.12)'}">${x.n}${x.d?` — ${escapeHtml(x.d)}`:""}</li>`).join("")
-    }
-
-    renderTable();updateHUD();pickNext();runTests();$("year").textContent=new Date().getFullYear()
+    pickNext();$("year").textContent=new Date().getFullYear()
   </script>
 </body>
 </html>
